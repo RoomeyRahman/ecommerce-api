@@ -8,6 +8,7 @@ import { JwtModule } from '@nestjs/jwt';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import 'dotenv/config';
+import { UsersModule } from './users/users.module';
 
 
 const DB_CONNECTION = process.env.DB_CONNECTION;
@@ -21,6 +22,7 @@ const DB_CONNECTION = process.env.DB_CONNECTION;
     MongooseModule.forRoot(DB_CONNECTION, {
       autoIndex: true,
     }),
+    UsersModule,
   ],
   controllers: [AppController],
   providers: [
