@@ -70,3 +70,9 @@ export enum PaymentStatus {
   REFUNDED = 'REFUNDED',
   UNPAID = 'UNPAID'
 }
+
+export enum CartStatus {
+  ACTIVE = 'Active',
+  CHECKED_OUT = 'CheckedOut',
+  ABANDONED = 'Abandoned',
+}

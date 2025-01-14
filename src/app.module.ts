@@ -12,6 +12,8 @@ import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { CategoriesModule } from './categories/categories.module';
 import { ProductsModule } from './products/products.module';
+import { OrdersModule } from './orders/orders.module';
+import { CartsModule } from './carts/carts.module';
 
 
 const DB_CONNECTION = process.env.DB_CONNECTION;
@@ -28,7 +30,9 @@ const DB_CONNECTION = process.env.DB_CONNECTION;
     UsersModule,
     AuthModule,
     CategoriesModule,
-    ProductsModule
+    ProductsModule,
+    OrdersModule,
+    CartsModule
   ],
   controllers: [AppController],
   providers: [
