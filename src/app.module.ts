@@ -11,6 +11,7 @@ import 'dotenv/config';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { CategoriesModule } from './categories/categories.module';
+import { ProductsModule } from './products/products.module';
 
 
 const DB_CONNECTION = process.env.DB_CONNECTION;
@@ -26,7 +27,8 @@ const DB_CONNECTION = process.env.DB_CONNECTION;
     }),
     UsersModule,
     AuthModule,
-    CategoriesModule
+    CategoriesModule,
+    ProductsModule
   ],
   controllers: [AppController],
   providers: [
