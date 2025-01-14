@@ -22,7 +22,7 @@ import {
     UserFileUploadDto,
 } from '../dto';
 import { IUserProfiles, IUser, IUserProfile } from '../interfaces';
-// import { JwtAuthGuard } from '../../auth/guards/jwt-auth.guard';
+import { JwtAuthGuard } from '../../auth/guards/jwt-auth.guard';
 import { ValidationPipe, TrimPipe, NullValidationPipe } from '../../common/pipes';
 import { User } from '../../common/decorators/user.decorator';
 import {
@@ -79,7 +79,7 @@ export class UsersProfileController {
     })
     @ApiConsumes('multipart/form-data')
     @ApiBody({ type: UserFileUploadDto })
-    // @UseGuards(JwtAuthGuard)
+    @UseGuards(JwtAuthGuard)
     @Put()
     public async updateUserProfilePut(
         @User() user: IUser,
@@ -124,7 +124,7 @@ export class UsersProfileController {
     @UsePipes(new NullValidationPipe())
     @UsePipes(new ValidationPipe(true))
     @UsePipes(new TrimPipe())
-    // @UseGuards(JwtAuthGuard)
+    @UseGuards(JwtAuthGuard)
     @Patch()
     public async updateUserProfile(
         @User() user: IUser,

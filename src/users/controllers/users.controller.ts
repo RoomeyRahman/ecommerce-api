@@ -26,7 +26,7 @@ import {
   OtpVerificationDto,
 } from '../dto';
 import { IUser } from '../interfaces';
-// import { JwtAuthGuard } from '../../auth/guards/jwt-auth.guard';
+import { JwtAuthGuard } from '../../auth/guards/jwt-auth.guard';
 import { ValidationPipe, TrimPipe, NullValidationPipe } from '../../common/pipes';
 import { User } from '../../common/decorators/user.decorator';
 import {
@@ -404,7 +404,7 @@ export class UsersController {
   })
   @UsePipes(new ValidationPipe(true))
   @UsePipes(new TrimPipe())
-  // @UseGuards(JwtAuthGuard)
+  @UseGuards(JwtAuthGuard)
   @Patch('reset/password')
   public resetPassword(
     @User() user: IUser,
@@ -472,7 +472,7 @@ export class UsersController {
   @UsePipes(new NullValidationPipe())
   @UsePipes(new ValidationPipe(true))
   @UsePipes(new TrimPipe())
-  // @UseGuards(JwtAuthGuard)
+  @UseGuards(JwtAuthGuard)
   @Patch(':id')
   public async updateUser(
     @Param('id') id: string,
